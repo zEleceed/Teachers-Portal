@@ -1,7 +1,16 @@
 # Teacher's Classroom Management Portal
 
 ## Overview
-This web application, built with Python and Django, serves as a platform for teachers to efficiently manage classrooms and student information. It supports basic registration and deletion functionalities, classroom folder management, student management within those folders, and allows teachers to note and record noteworthy events happening during class, organized by month.
+This web application, built with Python and Django, serves as a platform for teachers to efficiently manage classrooms and student information. It supports basic registration and deletion functionalities, classroom folder management, and student management within those folders, and allows teachers to note and record noteworthy events happening during class, organized by month.
+
+## Project Scope
+The Teacher's Portal project will develop a web application for teachers to efficiently manage classrooms and track student records through daily notes. It includes a registration system, classroom folders with student subfolders, and a user-friendly interface.
+
+## Success Criteria
+Success will be measured by the ability of teachers to easily register with an email, log in, navigate through classroom folders, manage student information, and quickly enter daily comments, streamlining their workflow.
+
+## Initial Estimate Build Period
+The estimated time to complete this project is four weeks, reflecting the project's complexity and the goals set for functionality and user experience.
 
 ## Features
 
