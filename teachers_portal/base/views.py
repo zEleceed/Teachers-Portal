@@ -2,23 +2,23 @@ from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView
-from .models import Post
+from .models import Classroom
 
 
 # Create your views here.
 
-class BlogListView(LoginRequiredMixin, ListView):
-    model = Post
+class ClassroomListView(LoginRequiredMixin, ListView):
+    model = Classroom
     template_name = "home.html"
 
 
-class BlogDetailView(LoginRequiredMixin, DetailView):
-    model = Post
+class ClassroomDetailView(LoginRequiredMixin, DetailView):
+    model = Classroom
     template_name = "post_detail.html"
 
 
-class BlogCreateView(LoginRequiredMixin, CreateView):
-    model = Post
+class ClassroomCreateView(LoginRequiredMixin, CreateView):
+    model = Classroom
     template_name = "classroom_new.html"
     fields = ("title", "body")
 

@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% for post in post_list %}
+    {% for classroom in classroom_list %}
     <div class="post-entry">
-        <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
-        <p>{{ post.body }}</p>
+        <h2><a href="{{ classroom.get_absolute_url }}">{{ classroom.title }}</a></h2>
+        <p>{{ classroom.body }}</p>
     </div>
     {% endfor %}
 {% endblock content %}
