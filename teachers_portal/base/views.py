@@ -14,7 +14,7 @@ class ClassroomListView(LoginRequiredMixin, ListView):
 
 class ClassroomDetailView(LoginRequiredMixin, DetailView):
     model = Classroom
-    template_name = "post_detail.html"
+    template_name = "classroom_detail.html"
 
 
 class ClassroomCreateView(LoginRequiredMixin, CreateView):
@@ -35,7 +35,7 @@ class StudentDetail(DetailView):
 class StudentCreateView(CreateView):
     model = Student
     template_name = "student_new.html"
-    fields = ("name","classroom",)
+    fields = ("name", "classroom",)
 
     def form_valid(self, form):
         form.instance.author = self.request.user

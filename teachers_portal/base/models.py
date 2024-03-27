@@ -16,16 +16,18 @@ class Classroom(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("post_detail", kwargs={"pk": self.pk})
+        return reverse("classroom_detail", kwargs={"pk": self.pk})
 
 
 class Student(models.Model):
     name = models.CharField(max_length=255)
     classroom = models.ForeignKey(Classroom, on_delete=models.CASCADE)
 
+    class Meta:
+        ordering = ["name"]  # presents students in alphabetical order
+
     def __str__(self):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("student_detail", kwargs={"pk": self.pk})
-
+        return reverse("classroom_detail", kwargs={"pk": self.classroom.pk})
