@@ -31,3 +31,15 @@ class Student(models.Model):
 
     def get_absolute_url(self):
         return reverse("classroom_detail", kwargs={"pk": self.classroom.pk})
+
+
+class Comment(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    comment = models.CharField(max_length=255)
+    created = models.DateTimeField(auto_now_add=True, editable=False)
+
+    def __str__(self):
+        return self.comment
+
+    def get_absolute_url(self):
+        return reverse("student_detail")

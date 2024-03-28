@@ -3,39 +3,21 @@
 {% block title %}Classrooms{% endblock title %}
 
 {% block content %}
-<!--    <div class="card">-->
-<!--        <div class="card-title">-->
-<!--            <span class="fw-bold">{{ classroom.title }}</span>-->
-<!--        </div>-->
-<!--        <div class="card-body">-->
-<!--            {% for student in classroom.student_set.all %}-->
-<!--                <p><span class="fw-bold">{{ student.name }}</span></p>-->
-<!--            {% endfor %}-->
-<!--            <a class="btn btn-primary" href="{% url 'student_new' %}" role="button">New Student</a>-->
-<!--        </div>-->
-
-<!--    </div>-->
-<!--    <p class="d-inline-flex gap-1">-->
-<!--      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">-->
-<!--        {{ classroom.title }}-->
-<!--      </button>-->
-<!--    </p>-->
-<!--    <div class="collapse show" id="collapseExample" style="">-->
-<!--      <div class="card card-body">-->
-<!--        {% for student in classroom.student_set.all %}-->
-<!--          <span class = "fw-bold">{{ student.name }}</span>-->
-<!--          {% endfor %}-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <a class="btn btn-primary" href="{% url 'student_new' %}" role="button">New Student</a>-->
-
 <h1> {{ classroom.title }} </h1>
 
 <div class="list-group">
     {% for student in classroom.student_set.all %}
-        <a href="#" class="list-group-item list-group-item-action">{{ student.name }}</a>
+        <a href="{% url 'student_detail' pk=student.pk %}" class="list-group-item list-group-item-action">{{ student.name }}</a>
     {% endfor %}
 </div>
 <hr width="100%" size="2">
 <a class="btn btn-primary" href="{% url 'student_new' %}" role="button">New Student</a>
+
+
+<div>
+<p>
+<a href="{% url 'classroom_delete' classroom.pk %}">Delete</a>
+</p>
+<p>Back to <a href="{% url 'home' %}">All Classrooms</a>.</p>
+</div>
 {% endblock content %}
