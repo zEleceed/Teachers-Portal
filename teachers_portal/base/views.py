@@ -3,6 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, DeleteView
 from django.urls import reverse_lazy
+from .forms import CommentForm
 from .models import Classroom, Student, Comment
 
 
@@ -41,6 +42,7 @@ class StudentDetail(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         student = self.get_object()
+        context["form"] = CommentForm()
         context['classroom'] = student.classroom
         return context
 
