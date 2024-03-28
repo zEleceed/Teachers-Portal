@@ -6,7 +6,6 @@ from .models import Classroom, Student
 
 
 # Create your views here.
-
 class ClassroomListView(LoginRequiredMixin, ListView):
     model = Classroom
     template_name = "home.html"
