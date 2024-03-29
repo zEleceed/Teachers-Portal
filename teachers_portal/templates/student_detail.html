@@ -2,25 +2,18 @@
 {% block content %}
 <h2>{{student.name}}</h2>
 <hr>
-<!--<form class="row g-3" method="post" action="{% url 'your_comment_submit_url_name' %}">-->
-<!--  {% csrf_token %}-->
-<!--  <div class="col-auto">-->
-<!--    <label for="commentInput" class="visually-hidden">Add a New Comment</label>-->
-<!--    <input type="text" class="form-control" id="commentInput" placeholder="Add a New Comment" name="comment">-->
-<!--  </div>-->
-<!--  <div class="col-auto">-->
-<!--    <button type="submit" class="btn btn-primary mb-3">Confirm</button>-->
-<!--  </div>-->
-<!--</form>-->
-<!--<form class="row g-3">-->
-<!--  <div class="col-auto">-->
-<!--    <label for="inputPassword2" class="visually-hidden">Add a New Comment</label>-->
-<!--    <input type="password" class="form-control" id="inputPassword2" placeholder="Add a New Comment">-->
-<!--  </div>-->
-<!--  <div class="col-auto">-->
-<!--    <button type="submit" class="btn btn-primary mb-3">Confirm</button>-->
-<!--  </div>-->
-<!--</form>-->
+{% for comment in student.comment_set.all %}
+        {{ comment.created|date:"F j" }} : {{comment}}  <br>
+{%endfor%}
 <hr>
+<form method="POST" class="row g-3">
+  {% csrf_token %}
+  <div class="col-auto">
+    {{form}}
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary mb-3">Submit Comment</button>
+  </div>
+</form>
 <p>Back to <a href="{% url 'classroom_detail' pk=classroom.pk %}">All Students</a>.</p>
 {% endblock content %}

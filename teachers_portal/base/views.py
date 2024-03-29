@@ -57,6 +57,3 @@ class StudentCreateView(CreateView):
         return super().form_valid(form)
 
 
-class CommentCreateView(CreateView):
-    model = Comment
-    pass

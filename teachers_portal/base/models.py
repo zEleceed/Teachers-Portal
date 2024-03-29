@@ -35,7 +35,7 @@ class Student(models.Model):
 
 class Comment(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
-    comment = models.CharField(max_length=255)
+    comment = models.TextField(max_length=255)
     created = models.DateTimeField(auto_now_add=True, editable=False)
 
     def __str__(self):
