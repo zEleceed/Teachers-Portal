@@ -3,7 +3,7 @@
 <h2>{{student.name}}</h2>
 <hr>
 {% for comment in student.comment_set.all %}
-        {{ comment.created|date:"F j" }} : {{comment}}  <br>
+        {{ comment.created|date:"Y-F j" }} : {{comment}}  <br>
 {%endfor%}
 <hr>
 <form method="POST" class="row g-3">

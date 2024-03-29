@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ClassroomListView, ClassroomDetailView, ClassroomCreateView, StudentDetail, StudentCreateView, ClassroomDeleteView
+from .views import ClassroomListView, ClassroomDetailView, ClassroomCreateView, StudentDetail, StudentCreateView, ClassroomDeleteView, CommentPost
 
 
 urlpatterns = [
